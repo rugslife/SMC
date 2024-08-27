@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motorcycle Insurance Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Motorcycle Insurance Calculator</h1>
+        </header>
+        <main>
+            <div class="input-section">
+                <div class="input-card">
+                    <label for="bike-type">Motorcycle Type:</label>
+                    <select id="bike-type">
+                        <option value="standard">Standard</option>
+                        <option value="sports">Sports</option>
+                        <option value="cruiser">Cruiser</option>
+                        <option value="touring">Touring</option>
+                    </select>
+                </div>
+
+                <div class="input-card">
+                    <label for="bike-value">Value of Motorcycle ($):</label>
+                    <input type="range" id="bike-value" min="1000" max="50000" value="10000" oninput="updateValueDisplay('bike-value', 'value-display')">
+                    <span id="value-display">$10,000</span>
+                </div>
+
+                <div class="input-card">
+                    <label for="coverage-level">Coverage Level:</label>
+                    <select id="coverage-level">
+                        <option value="basic">Basic</option>
+                        <option value="comprehensive">Comprehensive</option>
+                    </select>
+                </div>
+
+                <div class="input-card">
+                    <label for="add-ons">Add-ons:</label>
+                    <input type="checkbox" id="roadside" value="roadside"> Roadside Assistance<br>
+                    <input type="checkbox" id="rental" value="rental"> Rental Coverage
+                </div>
+            </div>
+
+            <div class="output-section">
+                <h2>Estimated Premium: <span id="premium">$0</span></h2>
+                <button onclick="calculatePremium()">Get Quote</button>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
